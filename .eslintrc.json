@@ -1,0 +1,116 @@
+{
+  "env": {
+    "browser": false,
+    "es6": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [
+        ".ts",
+        ".tsx"
+      ]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      },
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ],
+        "moduleDirectory": [
+          "node_modules",
+          "src/"
+        ]
+      }
+    }
+  },
+  "plugins": [
+    "ramda",
+    "sonarjs",
+    "@typescript-eslint",
+    "unicorn"
+  ],
+  "extends": [
+    "airbnb-base",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:ramda/recommended",
+    "plugin:sonarjs/recommended",
+    "plugin:unicorn/recommended"
+  ],
+  "rules": {
+    "indent": [
+      "error",
+      4,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "no-unused-vars": "warn",
+    // Git fixes this issue by automatically change the brake line type when pushing the local branches
+    "linebreak-style": "off",
+    "no-undef": "warn",
+    // Underscores are used to denote private functions and variables
+    "no-underscore-dangle": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "ignoreComments": true,
+        "ignoreTrailingComments": true,
+        "ignoreStrings": true,
+        "ignoreRegExpLiterals": true
+      }
+    ],
+    // checks if the imports have the right extension
+    // typescript doesn’t like when we add extensions.
+    "import/extensions": "off",
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "no-plusplus": "off",
+    "object-curly-spacing": "off",
+    // sets the file naming style of the project
+    "unicorn/filename-case": [
+      "error",
+      {
+        "cases": {
+          "camelCase": true,
+          "pascalCase": true
+        }
+      }
+    ],
+    "object-curly-newline": "off",
+    // disabling this rule because we have dynamically generated tests
+    "mocha/no-setup-in-describe": "off",
+    // sometimes it is necessary
+    "@typescript-eslint/ban-ts-comment": "off",
+    "unicorn/no-null": "off",
+    "unicorn/prevent-abbreviations": [
+      "error",
+      {
+        "replacements": {
+          "q": {
+            "query": true
+          },
+          "props": {
+            "properties": false
+          }
+        }
+      }
+    ],
+    "no-await-in-loop": "off",
+    "no-console": "off",
+    "unicorn/no-useless-undefined": "off",
+    "prefer-arrow-callback": "off",
+    "semi": "off"
+  }
+}
