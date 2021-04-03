@@ -16,13 +16,13 @@ async function runCommand(command: string): Promise<string> {
 
 const defaultCommand = 'fpcalc';
 
-interface fpcalcReturn {
+export interface fpcalcReturn {
     duration: number;
     fullDuration: number;
     fingerprint: string;
 }
 
-export default async function fpcalc(filePath: string): Promise<fpcalcReturn> {
+export async function fpcalc(filePath: string): Promise<fpcalcReturn> {
     const json = JSON.parse(await runCommand(`${defaultCommand} -json "${filePath}"`)) as fpcalcReturn;
     return {
         ...json,
@@ -31,7 +31,7 @@ export default async function fpcalc(filePath: string): Promise<fpcalcReturn> {
     };
 }
 
-type queryApiReturn = ResultsEntity | null
+export type queryApiReturn = ResultsEntity | null
 
 const baseUrl = 'https://api.acoustid.org/v2/lookup';
 export async function queryApi(fingerprint: fpcalcReturn, key: string): Promise<queryApiReturn> {

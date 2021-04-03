@@ -1,7 +1,7 @@
 import {it} from 'mocha';
 import {expect} from 'chai';
 import path from 'path';
-import fpcalc from '../src'
+import {fpcalc} from '../src'
 
 const testCases = [
     {

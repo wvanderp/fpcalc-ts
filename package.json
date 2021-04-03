@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A current wrapper for typescript and typescript",
   "license": "MIT",
+  "author": "wvdp",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": {
@@ -18,7 +19,6 @@
     "build": "tsc -b",
     "lint": "eslint --ext ts,tsx,json,js src/"
   },
-  "author": "wvdp",
   "devDependencies": {
     "@types/mocha": "^8.2.2",
     "@types/node": "^14.14.37",
