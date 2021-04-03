@@ -1,0 +1,2 @@
+# fpcalc-ts
+A current wrapper for typescript and typescript
