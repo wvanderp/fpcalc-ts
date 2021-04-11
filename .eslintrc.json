@@ -36,14 +36,20 @@
     "ramda",
     "sonarjs",
     "@typescript-eslint",
-    "unicorn"
+    "unicorn",
+    "mocha",
+    "chai-expect",
+    "jsdoc"
   ],
   "extends": [
     "airbnb-base",
     "plugin:@typescript-eslint/recommended",
     "plugin:ramda/recommended",
     "plugin:sonarjs/recommended",
-    "plugin:unicorn/recommended"
+    "plugin:unicorn/recommended",
+    "plugin:mocha/recommended",
+    "plugin:chai-expect/recommended",
+    "plugin:jsdoc/recommended"
   ],
   "rules": {
     "indent": [
@@ -112,5 +118,11 @@
     "unicorn/no-useless-undefined": "off",
     "prefer-arrow-callback": "off",
     "semi": "off"
-  }
+  },
+  "overrides": [{
+    "files": ["test/*.ts"],
+    "rules": {
+      "func-names": "off"
+    }
+  }]
 }

@@ -14,30 +14,38 @@
     "url": "https://github.com/wvanderp/wikidata-properties/issues"
   },
   "homepage": "https://github.com/wvanderp/wikidata-properties",
+  "engines": {
+    "node": "7.6.0"
+  },
   "scripts": {
-    "test": "mocha --require ts-node/register test/**/*.ts",
-    "build": "tsc -b",
-    "lint": "eslint --ext ts,tsx,json,js src/"
+    "build:docs": "jsdoc2md --template README.hbs --files lib/index.js > README.md",
+    "build": "tsc -b && npm run build:docs",
+    "lint": "eslint --ext ts,tsx,json,js src/ test/",
+    "test": "mocha --require ts-node/register test/**/*.ts"
   },
   "devDependencies": {
+    "@types/chai": "^4.2.16",
     "@types/mocha": "^8.2.2",
     "@types/node": "^14.14.37",
     "@types/qs": "^6.9.6",
-    "@types/chai": "^4.2.16",
-    "@typescript-eslint/eslint-plugin": "^4.20.0",
-    "@typescript-eslint/parser": "^4.20.0",
-    "eslint": "^7.23.0",
+    "@typescript-eslint/eslint-plugin": "^4.21.0",
+    "@typescript-eslint/parser": "^4.21.0",
+    "chai": "^4.3.4",
+    "eslint": "^7.24.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-chai-expect": "^2.2.0",
     "eslint-plugin-compat": "^3.9.0",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsdoc": "^32.3.0",
+    "eslint-plugin-mocha": "^8.1.0",
     "eslint-plugin-ramda": "^2.5.1",
     "eslint-plugin-sonarjs": "^0.6.0",
     "eslint-plugin-unicorn": "^29.0.0",
+    "jsdoc-to-markdown": "^7.0.1",
     "mocha": "^8.3.2",
     "ts-node": "^9.1.1",
-    "chai": "^4.3.4",
-    "typescript": "^4.2.3"
+    "typescript": "^4.2.4"
   },
   "dependencies": {
     "axios": "^0.21.1",
